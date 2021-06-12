@@ -5,7 +5,7 @@ Run an executable, get notified. Plays nice with cron.
 
 Place file named `config.json` in the execuation location.
 
-```json
+```
 {
 	"endHour": INT,
 	"sleepSeconds": INT,
