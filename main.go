@@ -159,6 +159,7 @@ func main() {
 				log.Fatalf("SMS completed with error %v. Aborting job.\n", res)
 			}
 			fmt.Println("Sending complete.")
+			break
 		} else {
 			fmt.Println("Nothing to send")
 		}
