@@ -1,19 +1,21 @@
 package main
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
 	"net/url"
-	"os"
 	"strconv"
 	"strings"
 	"time"
 )
+
+//go:embed config.json
+var configBytes []byte
 
 func randomUserAgent() string {
 	userAgents := []string{
@@ -102,16 +104,16 @@ func sendStockNotification(c Config) int {
 }
 
 func main() {
-	configFile, err := os.Open("config.json")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer configFile.Close()
+	// configFile, err := os.Open("config.json")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer configFile.Close()
 
-	configBytes, err := ioutil.ReadAll(configFile)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// configBytes, err := ioutil.ReadAll(configFile)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	var config Config
 	json.Unmarshal(configBytes, &config)

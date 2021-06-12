@@ -3,7 +3,9 @@ Run an executable, get notified. Plays nice with cron.
 
 ## Installation
 
-Place file named `config.json` in the execuation location.
+**WARNING**: Do NOT share your executable or place it someplace you distrust. This project embeds the config file into the executable, anyone with the binary will be able to access your twilio token, phone numbers, and all data in the config file.
+
+1. Place file named `config.json` in the project's directory.
 
 ```
 {
@@ -22,6 +24,8 @@ Place file named `config.json` in the execuation location.
 	]
 }
 ```
+
+2. Build or install `main.go` to generate the executabl.
 
 ## Usage
 
