@@ -104,17 +104,6 @@ func sendStockNotification(c Config) int {
 }
 
 func main() {
-	// configFile, err := os.Open("config.json")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// defer configFile.Close()
-
-	// configBytes, err := ioutil.ReadAll(configFile)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
 	var config Config
 	json.Unmarshal(configBytes, &config)
 
